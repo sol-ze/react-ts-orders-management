@@ -1,0 +1,4 @@
+* The project contains the frontend and the backend, one folder for each.
+* There are 2 pdf files:
+ 1- Home assignment - order management: contains everything about DB, API, STACK and RUNNING INSTRUCTIONS.
+ 2- React redux toolkit.." contains the exam, the correct answers are in green-bold text

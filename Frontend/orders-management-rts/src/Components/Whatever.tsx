@@ -1,27 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Snackbar } from "@mui/material";
+import { Snackbar, Typography } from "@mui/material";
 
 const Whatever = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
 
+  //on page load show snackbar
   useEffect(() => {
     setOpenSnackbar(true);
   }, []);
 
-  const handleClose = (event: React.SyntheticEvent | Event, reason: string) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpenSnackbar(false);
-  };
-
   return (
     <>
-      <h1>New Page</h1>
+      <Typography variant="h4" gutterBottom>
+        New Page
+      </Typography>
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
-        onClose={handleClose}
         message="Success message"
       />
     </>

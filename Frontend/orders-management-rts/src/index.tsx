@@ -17,7 +17,7 @@ axios.interceptors.request.use((config) => {
 });
 
 const theme = createTheme({
-  // Customize your theme here
+  // TODO customize theme
 });
 
 const root = ReactDOM.createRoot(

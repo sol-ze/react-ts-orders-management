@@ -44,6 +44,7 @@ const OrdersList = () => {
   const [hiddenItemCount, setHiddenItemCount] = useState(0);
   const navigate = useNavigate();
 
+  //On page load fetch all orders from DB
   useEffect(() => {
     axios
       .get("/orders/orders")
@@ -51,6 +52,7 @@ const OrdersList = () => {
       .catch((error) => console.error("Error fetching orders:", error));
   }, []);
 
+  //Count how many invisible orders we have
   useEffect(() => {
     if (orders) {
       const count = orders.filter((item) => item.is_visible === 0).length;

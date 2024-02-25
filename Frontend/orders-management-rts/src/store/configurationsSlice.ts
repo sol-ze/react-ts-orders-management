@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "./store";
 import axios from "axios";
 
+//Object structure that returend from API
 interface Configuration {
   id: number;
   key: string;
@@ -41,6 +42,7 @@ const configurationsSlice = createSlice({
   },
 });
 
+//Fetching configurations from DB
 export const fetchConfigurations = createAsyncThunk(
   "configurations/fetchConfigurations",
   async () => {
@@ -50,6 +52,7 @@ export const fetchConfigurations = createAsyncThunk(
   }
 );
 
+//Searching "show_component" configuration
 export const selectShowComponentConfig = (state: RootState) =>
   state.configurations.items.find((config) => config.key === "show_component")
     ?.value == 1;

@@ -27,12 +27,16 @@ interface Order {
 
 const ViewOrder = () => {
   const { id } = useParams();
+
+  //state for order details
   const [order, setOrder] = useState<Order | null>(null);
 
+  //app configuration is saved in redux store
   const showComponent = useSelector(selectShowComponentConfig);
 
   const navigate = useNavigate();
 
+  //get all order details by id
   useEffect(() => {
     if (id) {
       axios
@@ -46,10 +50,12 @@ const ViewOrder = () => {
     }
   }, [id]);
 
+  //next button navigates to another page
   const handleNextButtonClick = () => {
     navigate(ROUTES.WHATEVER);
   };
 
+  //back button going back to the main page
   const handleBackButtonClick = () => {
     navigate(ROUTES.HOME);
   };

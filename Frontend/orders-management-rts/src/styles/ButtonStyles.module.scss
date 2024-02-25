@@ -1,0 +1,8 @@
+.darkButton {
+  background-color: #333 !important; // Example to test specificity
+  color: white !important;
+
+  &:hover {
+    background-color: darken(#333, 10%) !important;
+  }
+}

@@ -12,6 +12,7 @@ router.get("/orders", async (req, res, next) => {
     res.json(data);
   } catch (err) {
     console.log(err);
+    //showing generic errors for more secure app
     next(ResponseError.generateExceptionError(err));
   }
 });
@@ -24,8 +25,11 @@ router.get("/:id", async (req, res, next) => {
     );
 
     const data = await orderModel.getOrderById(validateValues.id);
+
+    //adding ordered items array
     data.items = await orderModel.getOrderedItemsOfOrder(validateValues.id);
 
+    //Order not found
     if (data == undefined) {
       return next(new ResponseError(Errors.ERR404));
     }

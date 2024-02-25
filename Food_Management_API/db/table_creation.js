@@ -59,6 +59,6 @@ db.serialize(() => {
     "CREATE INDEX IF NOT EXISTS idx_order_customer_name ON `order`(customer_name);"
   );
 });
-console.log("created");
+console.log("tables created");
 
 db.close();

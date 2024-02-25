@@ -15,11 +15,13 @@ router.get("/", function (req, res, next) {
   }
 });
 
+//orders route
 router.use("/orders", ordersRouter);
 
-// //TODO ADD MIDDLEWARE - ONLY ADMIIN CAN SEE THIS
+//config route
 router.use("/config", configurationRouter);
 
+//generic error handling
 router.use(errorHandler);
 
 module.exports = router;

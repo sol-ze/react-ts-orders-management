@@ -11,6 +11,7 @@ router.get("/Configurations", async (req, res, next) => {
     res.json(data);
   } catch (err) {
     console.log(err);
+    //showing generic errors for more secure app
     next(ResponseError.generateExceptionError(err));
   }
 });

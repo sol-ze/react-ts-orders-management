@@ -1,8 +1,5 @@
 const sqlite3 = require("sqlite3").verbose();
 
-// const path = require("path");
-// console.log(path.resolve("./db/food.db")); // Log the resolved path
-
 const db = new sqlite3.Database("./db/food.db");
 
 // get orders from the database
